@@ -50,7 +50,8 @@ def call(
         cmd.append("--allow-untrusted")
 
     log = logger.get()
-    log.out_red("CLI: {}".format(" ".join(cmd + _collect_repos(mrepo, False, arch) + args)))
+    log.out_red("CLI: {}".format(" ".join([str(x) for x in (cmd +
+        _collect_repos(mrepo, False, arch) + args)]))
     return subprocess.run(
         cmd + _collect_repos(mrepo, False, arch) + args,
         cwd = cwd, env = env, capture_output = capture_output
