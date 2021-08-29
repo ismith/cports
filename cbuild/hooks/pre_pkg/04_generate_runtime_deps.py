@@ -59,7 +59,7 @@ def invoke(pkg):
             broot = None
             aarch = None
 
-        log.out_red(f"   LOG: {}, {}", dep, broot)
+        log.out_red(f"   LOG: {}, {}".format(dep, broot))
         info = cli.call(
             "info", ["--installed", "so:" + dep], None, root = broot,
             capture_output = True, arch = aarch, allow_untrusted = True
